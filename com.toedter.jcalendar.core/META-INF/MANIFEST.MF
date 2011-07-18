@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JCalendar Core
+Bundle-SymbolicName: com.toedter.jcalendar.core
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Kai Toedter
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
