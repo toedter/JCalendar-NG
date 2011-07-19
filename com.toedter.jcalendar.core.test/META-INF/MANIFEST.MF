@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JCalendar Core Test
+Bundle-SymbolicName: com.toedter.jcalendar.core.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Kai Tödter
+Fragment-Host: com.toedter.jcalendar.core;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.junit

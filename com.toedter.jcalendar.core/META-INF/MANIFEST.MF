@@ -5,3 +5,5 @@ Bundle-SymbolicName: com.toedter.jcalendar.core
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Kai Toedter
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: lib/joda-time-1.6.2.jar,
+ .
