@@ -12,6 +12,9 @@
 
 package com.toedter.jcalendar.core;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import org.joda.time.DateTime;
 
 /**
@@ -24,10 +27,36 @@ public class DateChooser {
 
 	private DateTime dateTime;
 
+	/**
+	 * Constructs an instance using today.
+	 */
 	public DateChooser() {
 		this(new DateTime());
 	}
 
+	/**
+	 * Constructs an instance from a given Date.
+	 * 
+	 * @param date the initialiting Date
+	 */
+	public DateChooser(Date date) {
+		this(new DateTime(date));
+	}
+
+	/**
+	 * Constructs an instance from a given Calendar.
+	 * 
+	 * @param calendar the initialiting Calendar
+	 */
+	public DateChooser(Calendar calendar) {
+		this(new DateTime(calendar));
+	}
+
+	/**
+	 * Constructs an instance from a given DateTime.
+	 * 
+	 * @param calendar the initialiting DateTime
+	 */
 	public DateChooser(DateTime dateTime) {
 		// normalize to year/month/date only
 		this.dateTime = new DateTime(dateTime.getYear(),
@@ -42,4 +71,14 @@ public class DateChooser {
 	public void setDateTime(DateTime dateTime) {
 		this.dateTime = dateTime;
 	}
+	
+	public Date getDate() {
+		return dateTime.toDate();
+	}
+
+	public Calendar getCalendar() {
+		return dateTime.toCalendar(null);
+	}
+
+
 }
