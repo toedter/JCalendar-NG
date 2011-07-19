@@ -37,7 +37,8 @@ public class DateChooser {
 	/**
 	 * Constructs an instance from a given Date.
 	 * 
-	 * @param date the initialiting Date
+	 * @param date
+	 *            the initializing Date
 	 */
 	public DateChooser(Date date) {
 		this(new DateTime(date));
@@ -46,7 +47,8 @@ public class DateChooser {
 	/**
 	 * Constructs an instance from a given Calendar.
 	 * 
-	 * @param calendar the initialiting Calendar
+	 * @param calendar
+	 *            the initializing Calendar
 	 */
 	public DateChooser(Calendar calendar) {
 		this(new DateTime(calendar));
@@ -55,13 +57,13 @@ public class DateChooser {
 	/**
 	 * Constructs an instance from a given DateTime.
 	 * 
-	 * @param calendar the initialiting DateTime
+	 * @param calendar
+	 *            the initializing DateTime
 	 */
 	public DateChooser(DateTime dateTime) {
 		// normalize to year/month/date only
 		this.dateTime = new DateTime(dateTime.getYear(),
-				dateTime.getMonthOfYear(), dateTime.getDayOfMonth(), 0,
-				0, 0, 0);
+				dateTime.getMonthOfYear(), dateTime.getDayOfMonth(), 0, 0, 0, 0);
 	}
 
 	public DateTime getDateTime() {
@@ -71,7 +73,7 @@ public class DateChooser {
 	public void setDateTime(DateTime dateTime) {
 		this.dateTime = dateTime;
 	}
-	
+
 	public Date getDate() {
 		return dateTime.toDate();
 	}
@@ -79,6 +81,5 @@ public class DateChooser {
 	public Calendar getCalendar() {
 		return dateTime.toCalendar(null);
 	}
-
 
 }

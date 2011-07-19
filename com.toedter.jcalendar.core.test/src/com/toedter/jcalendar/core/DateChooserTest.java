@@ -17,7 +17,7 @@ import org.junit.Test;
  * Tests the DateChooser component.
  * 
  * @author Kai Tödter
- *
+ * 
  */
 public class DateChooserTest {
 
@@ -35,7 +35,7 @@ public class DateChooserTest {
 		assertEquals(0, dateTime.getSecondOfMinute());
 		assertEquals(0, dateTime.getMillisOfSecond());
 	}
-	
+
 	@Test
 	public void testDefaultConstrucor() {
 		DateChooser dateChooser = new DateChooser();
