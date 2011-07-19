@@ -37,7 +37,7 @@ public class DateChooser {
 	/**
 	 * Constructs an instance from a given Date.
 	 * 
-	 * @param date the initialiting Date
+	 * @param date the initializing Date
 	 */
 	public DateChooser(Date date) {
 		this(new DateTime(date));
@@ -46,7 +46,7 @@ public class DateChooser {
 	/**
 	 * Constructs an instance from a given Calendar.
 	 * 
-	 * @param calendar the initialiting Calendar
+	 * @param calendar the initializing Calendar
 	 */
 	public DateChooser(Calendar calendar) {
 		this(new DateTime(calendar));
@@ -55,7 +55,7 @@ public class DateChooser {
 	/**
 	 * Constructs an instance from a given DateTime.
 	 * 
-	 * @param calendar the initialiting DateTime
+	 * @param calendar the initializing DateTime
 	 */
 	public DateChooser(DateTime dateTime) {
 		// normalize to year/month/date only
