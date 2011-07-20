@@ -48,16 +48,19 @@ public class DateChooserView extends JPanel implements
 	@Override
 	public void updateDays(List<IDayCell> days) {
 		for (int i = 0; i < 42; i++) {
-			int dayValue = days.get(i).getDay();
-			dayButtons[i + 7].setText("" + dayValue);
-			dayButtons[i + 7].setVisible(dayValue != 0);
+			String dayText = days.get(i).getDayText();
+			dayButtons[i + 7].setText(dayText);
+			dayButtons[i + 7].setVisible(dayText.length() != 0);
 		}
 	}
 
 	@Override
 	public void updateWeekDayNames(List<String> weekDayNames) {
-		// TODO Auto-generated method stub
-
+		int index = 0;
+		for (String weekDayName : weekDayNames) {
+			dayButtons[index].setText(weekDayName);
+			index++;
+		}
 	}
 
 	public static void main(String[] args) {
