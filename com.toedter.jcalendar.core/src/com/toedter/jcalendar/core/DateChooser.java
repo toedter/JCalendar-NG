@@ -12,7 +12,6 @@
 
 package com.toedter.jcalendar.core;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -84,13 +83,6 @@ public class DateChooser implements IDateChooserPresenter {
 		// normalize to year/month/date only
 		this.dateTime = new DateTime(dateTime.getYear(),
 				dateTime.getMonthOfYear(), dateTime.getDayOfMonth(), 0, 0, 0, 0);
-
-		dayCells = new ArrayList<IDayCell>(42);
-		for (int i = 0; i < 42; i++) {
-			DayCell dayCell = new DayCell();
-			dayCells.add(dayCell);
-		}
-		computeDayCellValues();
 	}
 
 	private void computeDayCellValues() {
