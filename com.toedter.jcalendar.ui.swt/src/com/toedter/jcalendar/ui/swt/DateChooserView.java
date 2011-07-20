@@ -63,7 +63,7 @@ public class DateChooserView extends Composite implements IDateChooserView {
 		shell.setLayout(new GridLayout());
 
 		DateChooserView dateChooserView = new DateChooserView(shell, SWT.NONE);
-		// dateChooserView.pack();
+		dateChooserView.pack();
 
 		shell.pack();
 		shell.open();
