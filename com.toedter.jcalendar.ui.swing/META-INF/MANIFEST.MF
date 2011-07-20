@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JCalendar Simple Swing UI
+Bundle-SymbolicName: com.toedter.jcalendar.ui.swing
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Kai Tödter
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: com.toedter.jcalendar.core

@@ -7,3 +7,4 @@ Bundle-Vendor: Kai Toedter
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ClassPath: lib/joda-time-1.6.2.jar,
  .
+Export-Package: com.toedter.jcalendar.core
