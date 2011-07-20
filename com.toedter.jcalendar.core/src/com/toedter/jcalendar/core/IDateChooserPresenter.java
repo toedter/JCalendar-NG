@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface IDateChooserPresenter {
 	public interface IDayCell {
-		public int getDay();
+		public String getDayText();
 
 		public boolean isEnabled();
 	}

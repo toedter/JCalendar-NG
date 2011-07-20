@@ -12,10 +12,12 @@
 
 package com.toedter.jcalendar.core;
 
+import java.text.DateFormatSymbols;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import org.joda.time.DateTime;
 import org.joda.time.Days;
@@ -31,13 +33,15 @@ public class DateChooser implements IDateChooserPresenter {
 	private DateTime dateTime;
 	private IDateChooserView view;
 	private final List<IDayCell> dayCells;
+	private Locale locale;
+	private List<String> weekdays;
 
 	private class DayCell implements IDateChooserPresenter.IDayCell {
-		int day;
+		String dayText;
 
 		@Override
-		public int getDay() {
-			return day;
+		public String getDayText() {
+			return dayText;
 		}
 
 		@Override
@@ -105,17 +109,21 @@ public class DateChooser implements IDateChooserPresenter {
 
 		int index = 2;
 		for (IDayCell dayCell : dayCells) {
-			if (index < dayOfWeek || index - dayOfWeek > daysInThisMonth) {
-				((DayCell) dayCell).day = 0;
+			if (index <= dayOfWeek || index - dayOfWeek > daysInThisMonth) {
+				((DayCell) dayCell).dayText = "";
 			} else {
-				((DayCell) dayCell).day = index - dayOfWeek;
+				((DayCell) dayCell).dayText = "" + (index - dayOfWeek);
 			}
 			index++;
 		}
 
-		// LocalDate localDate = new LocalDate();
-		// String month = localDate.monthOfYear().getAsText();
-		// System.out.println(month);
+		locale = Locale.getDefault();
+		DateFormatSymbols dateFormatSymbols = new DateFormatSymbols(locale);
+		String[] weekDays = dateFormatSymbols.getShortWeekdays();
+		weekdays = new ArrayList<String>();
+		for (int i = 1; i < 8; i++) {
+			weekdays.add(weekDays[i]);
+		}
 	}
 
 	public DateTime getDateTime() {
@@ -138,5 +146,6 @@ public class DateChooser implements IDateChooserPresenter {
 	public void setView(IDateChooserView view) {
 		this.view = view;
 		this.view.updateDays(dayCells);
+		this.view.updateWeekDayNames(weekdays);
 	}
 }
