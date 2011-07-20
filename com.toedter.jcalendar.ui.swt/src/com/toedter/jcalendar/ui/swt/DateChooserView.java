@@ -3,6 +3,7 @@ package com.toedter.jcalendar.ui.swt;
 import java.util.List;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -24,14 +25,13 @@ public class DateChooserView extends Composite implements IDateChooserView {
 
 		dayPanel = new Composite(parent, SWT.NONE);
 		dayPanel.setLayout(new GridLayout(7, true));
-		Display display = Display.getCurrent();
-		dayPanel.setBackground(display.getSystemColor(SWT.COLOR_BLUE));
 
 		dayButtons = new Button[49];
 
 		for (int i = 0; i < 49; i++) {
 			dayButtons[i] = new Button(dayPanel, SWT.PUSH);
-			dayButtons[i].setText("x");
+			GridData data = new GridData(GridData.FILL_BOTH);
+			dayButtons[i].setLayoutData(data);
 		}
 
 		presenter = new DateChooser();
@@ -63,7 +63,7 @@ public class DateChooserView extends Composite implements IDateChooserView {
 		shell.setLayout(new GridLayout());
 
 		DateChooserView dateChooserView = new DateChooserView(shell, SWT.NONE);
-		dateChooserView.pack();
+		// dateChooserView.pack();
 
 		shell.pack();
 		shell.open();
