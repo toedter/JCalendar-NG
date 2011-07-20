@@ -91,7 +91,6 @@ public class DateChooser implements IDateChooserPresenter {
 			dayCells.add(dayCell);
 		}
 		computeDayCellValues();
-				dateTime.getMonthOfYear(), dateTime.getDayOfMonth(), 0, 0, 0, 0);
 	}
 
 	private void computeDayCellValues() {
