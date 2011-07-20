@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JCalendar SWT UI
+Bundle-SymbolicName: com.toedter.jcalendar.ui.swt
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Kai Tödter
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: com.toedter.jcalendar.core,
+ org.eclipse.swt,
+ org.eclipse.swt.layout,
+ org.eclipse.swt.widgets
