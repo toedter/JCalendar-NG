@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Kai Tödter - initial API and implementation
+ *    Kai Tödter - initial API and implementation 1
  *******************************************************************************/
 
 package com.toedter.jcalendar.core;
