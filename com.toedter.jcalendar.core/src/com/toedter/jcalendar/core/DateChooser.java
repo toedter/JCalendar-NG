@@ -33,7 +33,7 @@ public class DateChooser implements IDateChooserPresenter {
 	private DateTime dateTime;
 	private IDateChooserView view;
 	private final List<IDayCell> dayCells;
-	private Locale locale;
+	private final Locale locale;
 	private List<String> weekdays;
 
 	private class DayCell implements IDateChooserPresenter.IDayCell {
@@ -93,6 +93,9 @@ public class DateChooser implements IDateChooserPresenter {
 			DayCell dayCell = new DayCell();
 			dayCells.add(dayCell);
 		}
+
+		locale = Locale.getDefault();
+		computeWeekdayNames();
 		computeDayCellValues();
 	}
 
@@ -116,13 +119,23 @@ public class DateChooser implements IDateChooserPresenter {
 			}
 			index++;
 		}
+	}
 
-		locale = Locale.getDefault();
+	private void computeWeekdayNames() {
+		int firstDayOfWeek = Calendar.getInstance().getFirstDayOfWeek();
 		DateFormatSymbols dateFormatSymbols = new DateFormatSymbols(locale);
-		String[] weekDays = dateFormatSymbols.getShortWeekdays();
+		String[] dayNames = dateFormatSymbols.getShortWeekdays();
 		weekdays = new ArrayList<String>();
-		for (int i = 1; i < 8; i++) {
-			weekdays.add(weekDays[i]);
+
+		int day = firstDayOfWeek;
+
+		for (int i = 0; i < 7; i++) {
+			weekdays.add(dayNames[day]);
+			if (day < 7) {
+				day++;
+			} else {
+				day -= 6;
+			}
 		}
 	}
 
