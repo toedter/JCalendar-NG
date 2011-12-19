@@ -25,7 +25,7 @@ import org.joda.time.Days;
 /**
  * This class provides functionality for choosing a date.
  * 
- * @author Kai Tödter
+ * @author Kai Toedter
  * 
  */
 public class DateChooser implements IDateChooserPresenter {
@@ -86,8 +86,8 @@ public class DateChooser implements IDateChooserPresenter {
 	 */
 	public DateChooser(DateTime dateTime) {
 		// normalize to year/month/date only
-		this.dateTime = new DateTime(dateTime.getYear(),
-				dateTime.getMonthOfYear(), dateTime.getDayOfMonth(), 0, 0, 0, 0);
+		this.dateTime = new DateTime(dateTime.getYear(), dateTime.getMonthOfYear(), dateTime.getDayOfMonth(), 0, 0, 0,
+				0);
 		dayCells = new ArrayList<IDayCell>(42);
 		for (int i = 0; i < 42; i++) {
 			DayCell dayCell = new DayCell();
@@ -100,10 +100,8 @@ public class DateChooser implements IDateChooserPresenter {
 	}
 
 	private void computeDayCellValues() {
-		DateTime firstDayThisMonth = new DateTime(dateTime.getYear(),
-				dateTime.getMonthOfYear(), 1, 0, 0, 0, 0);
-		DateTime firstDayNextMonth = firstDayThisMonth.plusMonths(1)
-				.withDayOfMonth(1);
+		DateTime firstDayThisMonth = new DateTime(dateTime.getYear(), dateTime.getMonthOfYear(), 1, 0, 0, 0, 0);
+		DateTime firstDayNextMonth = firstDayThisMonth.plusMonths(1).withDayOfMonth(1);
 		int dayOfWeek = firstDayThisMonth.dayOfWeek().get();
 
 		Days d = Days.daysBetween(firstDayThisMonth, firstDayNextMonth);
